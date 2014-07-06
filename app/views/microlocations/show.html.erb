@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Uuid:</strong>
+  <%= @microlocation.uuid %>
+</p>
+
+<p>
+  <strong>Major:</strong>
+  <%= @microlocation.major_id %>
+</p>
+
+<p>
+  <strong>Minor:</strong>
+  <%= @microlocation.minor_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @microlocation.name %>
+</p>
+
+<p>
+  <strong>Descriptor tag:</strong>
+  <%= @microlocation.descriptor_tag %>
+</p>
+
+<p>
+  <strong>Action tag:</strong>
+  <%= @microlocation.action_tag %>
+</p>
+
+<p>
+  <strong>Price tag:</strong>
+  <%= @microlocation.price_tag %>
+</p>
+
+<%= link_to 'Edit', edit_venue_address_microlocation_path(@venue, @address, @microlocation) %> |
+<%= link_to 'Back', venue_address_microlocations_path(@venue, @address) %>

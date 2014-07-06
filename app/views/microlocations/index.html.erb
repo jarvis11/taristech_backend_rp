@@ -1,0 +1,37 @@
+<h1>Listing microlocations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Uuid</th>
+      <th>Major</th>
+      <th>Minor</th>
+      <th>Name</th>
+      <th>Descriptor tag</th>
+      <th>Action tag</th>
+      <th>Price tag</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @microlocations.each do |microlocation| %>
+      <tr>
+        <td><%= microlocation.uuid %></td>
+        <td><%= microlocation.major_id %></td>
+        <td><%= microlocation.minor_id %></td>
+        <td><%= microlocation.name %></td>
+        <td><%= microlocation.descriptor_tag %></td>
+        <td><%= microlocation.action_tag %></td>
+        <td><%= microlocation.price_tag %></td>
+        <td><%= link_to 'Show', venue_address_microlocation_path(@venue, @address, microlocation) %></td>
+        <td><%= link_to 'Edit', edit_venue_address_microlocation_path(@venue, @address, microlocation) %></td>
+        <td><%= link_to 'Destroy', [@venue, @address, microlocation], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Microlocation', new_venue_address_microlocation_path(@venue, @address) %>

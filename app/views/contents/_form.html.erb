@@ -1,0 +1,53 @@
+<%= form_for(@content) do |f| %>
+  <% if @content.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@content.errors.count, "error") %> prohibited this content from being saved:</h2>
+
+      <ul>
+      <% @content.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :advertiser_id %><br>
+    <%= f.text_field :advertiser_id %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br>
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :budget %><br>
+    <%= f.text_field :budget %>
+  </div>
+  <div class="field">
+    <%= f.label :bid_type %><br>
+    <%= f.text_field :bid_type %>
+  </div>
+  <div class="field">
+    <%= f.label :bid_amount %><br>
+    <%= f.text_field :bid_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :notification_title %><br>
+    <%= f.text_field :notification_title %>
+  </div>
+  <div class="field">
+    <%= f.label :notification_body %><br>
+    <%= f.text_field :notification_body %>
+  </div>
+  <div class="field">
+    <%= f.label :page_title %><br>
+    <%= f.text_field :page_title %>
+  </div>
+  <div class="field">
+    <%= f.label :page_body %><br>
+    <%= f.text_field :page_body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

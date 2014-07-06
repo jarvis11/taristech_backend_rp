@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Venue name:</strong>
+  <%= @target.venue_name %>
+</p>
+
+<p>
+  <strong>Venue street:</strong>
+  <%= @target.venue_street %>
+</p>
+
+<p>
+  <strong>Venue city:</strong>
+  <%= @target.venue_city %>
+</p>
+
+<p>
+  <strong>Venue state:</strong>
+  <%= @target.venue_state %>
+</p>
+
+<p>
+  <strong>Venue zip:</strong>
+  <%= @target.venue_zip %>
+</p>
+
+<p>
+  <strong>Descriptor tag:</strong>
+  <%= @target.descriptor_tag %>
+</p>
+
+<p>
+  <strong>Action tag:</strong>
+  <%= @target.action_tag %>
+</p>
+
+<p>
+  <strong>Price tag:</strong>
+  <%= @target.price_tag %>
+</p>
+
+<%= link_to 'Edit', edit_content_target_path(@content, @target) %> |
+<%= link_to 'Back', content_targets_path(@content) %>

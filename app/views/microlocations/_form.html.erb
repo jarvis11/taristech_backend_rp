@@ -1,0 +1,45 @@
+<%= form_for([@venue, @address, @microlocation]) do |f| %>
+  <% if @microlocation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@microlocation.errors.count, "error") %> prohibited this microlocation from being saved:</h2>
+
+      <ul>
+      <% @microlocation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :uuid %><br>
+    <%= f.text_field :uuid %>
+  </div>
+  <div class="field">
+    <%= f.label :major_id %><br>
+    <%= f.number_field :major_id %>
+  </div>
+  <div class="field">
+    <%= f.label :minor_id %><br>
+    <%= f.number_field :minor_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :descriptor_tag %><br>
+    <%= f.text_field :descriptor_tag %>
+  </div>
+  <div class="field">
+    <%= f.label :action_tag %><br>
+    <%= f.text_field :action_tag %>
+  </div>
+  <div class="field">
+    <%= f.label :price_tag %><br>
+    <%= f.text_field :price_tag %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

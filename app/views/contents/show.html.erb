@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Advertiser:</strong>
+  <%= @content.advertiser_id %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @content.type %>
+</p>
+
+<p>
+  <strong>Budget:</strong>
+  <%= @content.budget %>
+</p>
+
+<p>
+  <strong>Bid Type:</strong>
+  <%= @content.bid_type %>
+</p>
+
+<p>
+  <strong>Bid Amount:</strong>
+  <%= @content.bid_amount %>
+</p>
+
+<p>
+  <strong>Notif Title:</strong>
+  <%= @content.notification_title %>
+</p>
+
+<p>
+  <strong>Notif Body:</strong>
+  <%= @content.notification_body %>
+</p>
+
+<p>
+  <strong>Page Title:</strong>
+  <%= @content.page_title %>
+</p>
+
+<p>
+  <strong>Page Body:</strong>
+  <%= @content.page_body %>
+</p>
+
+<%= link_to 'Edit', edit_content_path(@content) %> |
+<%= link_to 'Back', contents_path %>

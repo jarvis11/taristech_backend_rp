@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @mediabuyer.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @mediabuyer.last_name %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @mediabuyer.password %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @mediabuyer.phone %>
+</p>
+
+<p>
+  <strong>Permission:</strong>
+  <%= @mediabuyer.permission %>
+</p>
+
+<%= link_to 'Edit', edit_advertiser_mediabuyer_path(@advertiser, @mediabuyer) %> |
+<%= link_to 'Back', advertiser_mediabuyers_path(@advertiser) %>

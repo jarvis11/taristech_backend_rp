@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  advertiser_id: MyString
+  type: 
+  budget: 1.5
+
+two:
+  advertiser_id: MyString
+  type: 
+  budget: 1.5

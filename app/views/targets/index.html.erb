@@ -1,0 +1,39 @@
+<h1>Listing targets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Venue name</th>
+      <th>Venue street</th>
+      <th>Venue city</th>
+      <th>Venue state</th>
+      <th>Venue zip</th>
+      <th>Descriptor tag</th>
+      <th>Action tag</th>
+      <th>Price tag</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @targets.each do |target| %>
+      <tr>
+        <td><%= target.venue_name %></td>
+        <td><%= target.venue_street %></td>
+        <td><%= target.venue_city %></td>
+        <td><%= target.venue_state %></td>
+        <td><%= target.venue_zip %></td>
+        <td><%= target.descriptor_tag %></td>
+        <td><%= target.action_tag %></td>
+        <td><%= target.price_tag %></td>
+        <td><%= link_to 'Show', content_targets_path(@content, target) %></td>
+        <td><%= link_to 'Edit', edit_content_target_path(@content, target) %></td>
+        <td><%= link_to 'Destroy', [@content, target], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Target', new_content_target_path(@content) %>

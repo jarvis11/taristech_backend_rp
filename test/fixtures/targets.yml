@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  venue_name: MyString
+  venue_street: MyString
+  venue_city: MyString
+  venue_state: MyString
+  venue_zip: 1
+  descriptor_tag: MyString
+  action_tag: MyString
+  price_tag: MyString
+
+two:
+  venue_name: MyString
+  venue_street: MyString
+  venue_city: MyString
+  venue_state: MyString
+  venue_zip: 1
+  descriptor_tag: MyString
+  action_tag: MyString
+  price_tag: MyString

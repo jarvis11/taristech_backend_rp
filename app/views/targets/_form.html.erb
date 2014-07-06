@@ -1,0 +1,49 @@
+<%= form_for([@content, @target]) do |f| %>
+  <% if @target.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@target.errors.count, "error") %> prohibited this target from being saved:</h2>
+
+      <ul>
+      <% @target.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :venue_name %><br>
+    <%= f.text_field :venue_name %>
+  </div>
+  <div class="field">
+    <%= f.label :venue_street %><br>
+    <%= f.text_field :venue_street %>
+  </div>
+  <div class="field">
+    <%= f.label :venue_city %><br>
+    <%= f.text_field :venue_city %>
+  </div>
+  <div class="field">
+    <%= f.label :venue_state %><br>
+    <%= f.text_field :venue_state %>
+  </div>
+  <div class="field">
+    <%= f.label :venue_zip %><br>
+    <%= f.number_field :venue_zip %>
+  </div>
+  <div class="field">
+    <%= f.label :descriptor_tag %><br>
+    <%= f.text_field :descriptor_tag %>
+  </div>
+  <div class="field">
+    <%= f.label :action_tag %><br>
+    <%= f.text_field :action_tag %>
+  </div>
+  <div class="field">
+    <%= f.label :price_tag %><br>
+    <%= f.text_field :price_tag %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
