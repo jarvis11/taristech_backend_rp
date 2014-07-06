@@ -1,28 +1,142 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
+Taris README stage 0.2 alpha.
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+* Ruby version 2.1.1
+
+* Rails version 4.1.2
+
+* Mongoid version 4.0.0
+
+* Application Routes
+
+  Prefix Verb   URI Pattern                                                               Controller#Action
+    venue_address_microlocations GET    /venues/:venue_id/addresses/:address_id/microlocations(.:format)          microlocations#index
+                                 POST   /venues/:venue_id/addresses/:address_id/microlocations(.:format)          microlocations#create
+ new_venue_address_microlocation GET    /venues/:venue_id/addresses/:address_id/microlocations/new(.:format)      microlocations#new
+edit_venue_address_microlocation GET    /venues/:venue_id/addresses/:address_id/microlocations/:id/edit(.:format) microlocations#edit
+     venue_address_microlocation GET    /venues/:venue_id/addresses/:address_id/microlocations/:id(.:format)      microlocations#show
+                                 PATCH  /venues/:venue_id/addresses/:address_id/microlocations/:id(.:format)      microlocations#update
+                                 PUT    /venues/:venue_id/addresses/:address_id/microlocations/:id(.:format)      microlocations#update
+                                 DELETE /venues/:venue_id/addresses/:address_id/microlocations/:id(.:format)      microlocations#destroy
+                 venue_addresses GET    /venues/:venue_id/addresses(.:format)                                     addresses#index
+                                 POST   /venues/:venue_id/addresses(.:format)                                     addresses#create
+               new_venue_address GET    /venues/:venue_id/addresses/new(.:format)                                 addresses#new
+              edit_venue_address GET    /venues/:venue_id/addresses/:id/edit(.:format)                            addresses#edit
+                   venue_address GET    /venues/:venue_id/addresses/:id(.:format)                                 addresses#show
+                                 PATCH  /venues/:venue_id/addresses/:id(.:format)                                 addresses#update
+                                 PUT    /venues/:venue_id/addresses/:id(.:format)                                 addresses#update
+                                 DELETE /venues/:venue_id/addresses/:id(.:format)                                 addresses#destroy
+                          venues GET    /venues(.:format)                                                         venues#index
+                                 POST   /venues(.:format)                                                         venues#create
+                       new_venue GET    /venues/new(.:format)                                                     venues#new
+                      edit_venue GET    /venues/:id/edit(.:format)                                                venues#edit
+                           venue GET    /venues/:id(.:format)                                                     venues#show
+                                 PATCH  /venues/:id(.:format)                                                     venues#update
+                                 PUT    /venues/:id(.:format)                                                     venues#update
+                                 DELETE /venues/:id(.:format)                                                     venues#destroy
+                 content_targets GET    /contents/:content_id/targets(.:format)                                   targets#index
+                                 POST   /contents/:content_id/targets(.:format)                                   targets#create
+              new_content_target GET    /contents/:content_id/targets/new(.:format)                               targets#new
+             edit_content_target GET    /contents/:content_id/targets/:id/edit(.:format)                          targets#edit
+                  content_target GET    /contents/:content_id/targets/:id(.:format)                               targets#show
+                                 PATCH  /contents/:content_id/targets/:id(.:format)                               targets#update
+                                 PUT    /contents/:content_id/targets/:id(.:format)                               targets#update
+                                 DELETE /contents/:content_id/targets/:id(.:format)                               targets#destroy
+            content_adstatistics GET    /contents/:content_id/adstatistics(.:format)                              adstatistics#index
+                                 POST   /contents/:content_id/adstatistics(.:format)                              adstatistics#create
+         new_content_adstatistic GET    /contents/:content_id/adstatistics/new(.:format)                          adstatistics#new
+        edit_content_adstatistic GET    /contents/:content_id/adstatistics/:id/edit(.:format)                     adstatistics#edit
+             content_adstatistic GET    /contents/:content_id/adstatistics/:id(.:format)                          adstatistics#show
+                                 PATCH  /contents/:content_id/adstatistics/:id(.:format)                          adstatistics#update
+                                 PUT    /contents/:content_id/adstatistics/:id(.:format)                          adstatistics#update
+                                 DELETE /contents/:content_id/adstatistics/:id(.:format)                          adstatistics#destroy
+                        contents GET    /contents(.:format)                                                       contents#index
+                                 POST   /contents(.:format)                                                       contents#create
+                     new_content GET    /contents/new(.:format)                                                   contents#new
+                    edit_content GET    /contents/:id/edit(.:format)                                              contents#edit
+                         content GET    /contents/:id(.:format)                                                   contents#show
+                                 PATCH  /contents/:id(.:format)                                                   contents#update
+                                 PUT    /contents/:id(.:format)                                                   contents#update
+                                 DELETE /contents/:id(.:format)                                                   contents#destroy
+          advertiser_mediabuyers GET    /advertisers/:advertiser_id/mediabuyers(.:format)                         mediabuyers#index
+                                 POST   /advertisers/:advertiser_id/mediabuyers(.:format)                         mediabuyers#create
+       new_advertiser_mediabuyer GET    /advertisers/:advertiser_id/mediabuyers/new(.:format)                     mediabuyers#new
+      edit_advertiser_mediabuyer GET    /advertisers/:advertiser_id/mediabuyers/:id/edit(.:format)                mediabuyers#edit
+           advertiser_mediabuyer GET    /advertisers/:advertiser_id/mediabuyers/:id(.:format)                     mediabuyers#show
+                                 PATCH  /advertisers/:advertiser_id/mediabuyers/:id(.:format)                     mediabuyers#update
+                                 PUT    /advertisers/:advertiser_id/mediabuyers/:id(.:format)                     mediabuyers#update
+                                 DELETE /advertisers/:advertiser_id/mediabuyers/:id(.:format)                     mediabuyers#destroy
+                     advertisers GET    /advertisers(.:format)                                                    advertisers#index
+                                 POST   /advertisers(.:format)                                                    advertisers#create
+                  new_advertiser GET    /advertisers/new(.:format)                                                advertisers#new
+                 edit_advertiser GET    /advertisers/:id/edit(.:format)                                           advertisers#edit
+                      advertiser GET    /advertisers/:id(.:format)                                                advertisers#show
+                                 PATCH  /advertisers/:id(.:format)                                                advertisers#update
+                                 PUT    /advertisers/:id(.:format)                                                advertisers#update
+                                 DELETE /advertisers/:id(.:format)                                                advertisers#destroy
+
+* Deployment Instructions
+	
+	To be deployed on Windows Azure. Utilize Ubuntu VM. For test deployment use Heroku and MongoHQ.
+
+* Run test suite using "rails s" comand in bash. Make sure local instance of MongoDB is running. 
+
+	mongoid.yml test config:
+
+		test:
+		  sessions:
+		    default:
+		      database: taristech_backend_rp_test
+		      hosts:
+		        - localhost:27017
+		      options:
+		        read: primary
+		        # In the test environment we lower the retries and retry interval to
+		        # low amounts for fast failures.
+		        max_retries: 1
+		        retry_interval: 0 
+
+* Database Models:
+
+	Found in /app/models/:
+
+		Venues ==> Addresses ==> Microlocations
+		Advertiser ==> Mediabuyer
+		   |
+		   --> Content ==> Target
+		   --> Content ==> Adstatistic
+
+	Double embed for Microlocations within venues. Controller has a double load to accomodate. 
+
+* Sample Queries:
+
+	All venues:
+
+		> db.venues.find()
+		{ "_id" : ObjectId("53b868d142484143f7000000"), 
+			"addresses" : [ 	
+				{ 	"_id" : ObjectId("53b868ef42484143f7010000"), 	"city" : "Chicago", 	
+					"microlocations" : [ 	
+						{ 	"_id" : ObjectId("53b86f304248414445030000"), 	"uuid" : "128912jdkd21928", 	"major_id" : 12, 	"minor_id" : 4, 	"name" : "Court Side Seats", 	"descriptor_tag" : "Seating", 	"action_tag" : "Watching Game", 	"price_tag" : "$$$$" }, 	{ 	"_id" : ObjectId("53b86ff94248414445050000"), 	"uuid" : "1283u120imakscoas", 	"major_id" : 12, 	"minor_id" : 1, 	"name" : "Concession", 	"descriptor_tag" : "Food", "action_tag" : "Eating", 	"price_tag" : "$$" }, 	{ 	"_id" : ObjectId("53b8707c4248414445060000"), 	"uuid" : "ur923uirm923irk923", 	"major_id" : 12, 	"minor_id" : 11, 	"name" : "Trial", 	"descriptor_tag" : "Trial", 	"action_tag" : "Tas", 	"price_tag" : "oisfao" } ], 	
+				"state" : "Il", 	"street" : "1901 W Madison St", 	"zip" : 60612 } ], 
+		"name" : "United Center" }
+
+	All advertisements: 
+
+		> db.contents.find()
+			{ "_id" : ObjectId("53b5afe84248413811000000"), "advertiser_id" : "53b5a4d54248413709010000", "budget" : 6.51, "created_at" : ISODate("2014-07-03T19:32:56.321Z"), "targets" : [ 	{ 	"_id" : ObjectId("53b5b5864248413873000000"), 	"venue_name" : "", 	"venue_street" : "", 	"venue_city" : "", 	"venue_state" : "", 	"venue_zip" : null, 	"descriptor_tag" : "", 	"action_tag" : "Shoping", 	"price_tag" : "$$$$" }, 	{ 	"_id" : ObjectId("53b5b5a34248413873010000"), 	"venue_name" : "United Center", 	"venue_street" : "", 	"venue_city" : "", 	"venue_state" : "", 	"venue_zip" : null, 	"descriptor_tag" : "Court Side Seats", 	"action_tag" : "","price_tag" : "" } ], "type" : "E-Commerce", "updated_at" : ISODate("2014-07-03T19:32:56.321Z") }
+			{ "_id" : ObjectId("53b5b6064248413873020000"), "advertiser_id" : "53b5a4d54248413709010000", "type" : "Local", "budget" : 7.56, "updated_at" : ISODate("2014-07-03T19:59:02.770Z"), "created_at" : ISODate("2014-07-03T19:59:02.770Z") }
+			> db.contents.find()
+			{ "_id" : ObjectId("53b5b6064248413873020000"), "advertiser_id" : "53b5a4d54248413709010000", "type" : "Local", "budget" : 7.56, "updated_at" : ISODate("2014-07-03T19:59:02.770Z"), "created_at" : ISODate("2014-07-03T19:59:02.770Z") }
+			{ "_id" : ObjectId("53b5afe84248413811000000"), "advertiser_id" : "53b5a4d54248413709010000", "bid_amount" : 1.2, "bid_type" : "CPM", "budget" : 6.51, "created_at" : ISODate("2014-07-03T19:32:56.321Z"), "notification_body" : "This is a trial", "notification_title" : "This is a trial", "page_body" : "This is a trial", "page_title" : "This is a trial", "targets" : [ 	{ 	"_id" : ObjectId("53b5b5864248413873000000"), 	"venue_name" : "", 	"venue_street" : "", 	"venue_city" : "", 	"venue_state" : "", 	"venue_zip" : null, 	"descriptor_tag" : "", 	"action_tag" : "Shoping", 	"price_tag" : "$$$$" }, 	{ 	"_id" : ObjectId("53b5b5a34248413873010000"), 	"venue_name" : "United Center", 	"venue_street" : "", 	"venue_city" : "", 	"venue_state" : "", 	"venue_zip" : null, 	"descriptor_tag" : "Court Side Seats", 	"action_tag" : "", 	"price_tag" : "" } ], "type" : "E-Commerce", "updated_at" : ISODate("2014-07-03T20:38:22.583Z") }
+
+
+	All advertisements belonging to advertiser "53b5afe84248413811000000":
+
+		> db.contents.find({_id: ObjectId("53b5afe84248413811000000")})
+			{ "_id" : ObjectId("53b5afe84248413811000000"), "adstatistics" : [ 	{ 	"_id" : ObjectId("53b5c1cc42484139a5000000"), 	"type" : "Click", 	"updated_at" : ISODate("2014-07-03T20:49:16.461Z"), 	"created_at" : ISODate("2014-07-03T20:49:16.461Z") }, 	{ 	"_id" : ObjectId("53b5c1f642484139a5010000"), 	"type" : "Action", 	"updated_at" : ISODate("2014-07-03T20:49:58.498Z"), 	"created_at" : ISODate("2014-07-03T20:49:58.498Z") } ], "advertiser_id" : "53b5a4d54248413709010000", "bid_amount" : 1.2, "bid_type" : "CPM", "budget" : 6.51, "created_at" : ISODate("2014-07-03T19:32:56.321Z"), "notification_body" : "This is a trial", "notification_title" : "This is a trial", "page_body" : "This is a trial", "page_title" : "This is a trial", "targets" : [ 	{ 	"_id" : ObjectId("53b5b5864248413873000000"), 	"venue_name" : "", 	"venue_street" : "", 	"venue_city" : "", 	"venue_state" : "", 	"venue_zip" : null, 	"descriptor_tag" : "", 	"action_tag" : "Shoping", 	"price_tag" : "$$$$" }, 	{ 	"_id" : ObjectId("53b5b5a34248413873010000"), 	"venue_name" : "United Center", 	"venue_street" : "", 	"venue_city" : "", 	"venue_state" : "", 	"venue_zip" : null, 	"descriptor_tag" : "Court Side Seats", 	"action_tag" : "", 	"price_tag" : "" } ], "type" : "E-Commerce", "updated_at" : ISODate("2014-07-03T20:38:22.583Z") }
+
